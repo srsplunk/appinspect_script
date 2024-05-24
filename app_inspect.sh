@@ -1,6 +1,6 @@
-
+SPLUNK_USERNAME=<YOUR_SPLUNKDOTCOM_USERNAME>
 tgz_file=$1
-response=$(curl -u stuartidelta01 --url "https://api.splunk.com/2.0/rest/login/splunk")
+response=$(curl -u ${SPLUNK_USERNAME} --url "https://api.splunk.com/2.0/rest/login/splunk")
 token=$(echo $response|jq '.data.token')
 #strip double quotes from start and end:
 tok="${token%\"}"
